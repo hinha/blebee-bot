@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/hinha/Documents/github/blebee-bot/model/model.tflearn"
+all_model_checkpoint_paths: "/home/hinha/Documents/github/blebee-bot/model/model.tflearn"

@@ -1,0 +1,82 @@
+{"intents": [
+        {"tag": "salam",
+         "patterns": ["Hi","halo","pagi", "sewa dong", "ada orang disana?", "halo", "bos","bang", "test","mau tanya dong"],
+         "responses": ["halo, ada apa?", "ada yang bisa dibantu ?"],
+         "context_set": ""
+        },
+        {"tag": "age",
+         "patterns": ["how old", "how old is noel", "what is your age", "how old are you", "age?"],
+         "responses": ["I am 19 years old!", "19 years young!"],
+         "context_set": ""
+        },
+        {"tag": "nama",
+          "patterns": ["siapa ini?", "siapa kamu?", "ini siapa?"],
+          "responses": ["Halo, perkenalkan saya noel", "saya noel"],
+          "context_set": ""
+        },
+        {
+          "tag": "data",
+          "patterns": ["ambil data", "data hari ini"],
+          "responses": ["mau ambil data apa ?", "data apa ?", "bisa kami ketahui data apa yang mau diambil ?"],
+          "context_set": "data"
+        },
+        {
+          "tag": "twitter",
+          "patterns": ["ambil data twitter", "data twitter", "twitter"],
+          "responses": ["pilih rentang tanggal ya, format"],
+          "context_set": "twitter"
+        },
+        {
+          "tag": "instagram",
+          "patterns": ["ambil data instagram", "data instagram", "instagram"],
+          "responses": ["pilih rentang tanggal ya, format"],
+          "context_set": "instagram"
+        },
+        {
+          "tag": "youtube",
+          "patterns": ["ambil data instagram", "data instagram", "youtube"],
+          "responses": ["pilih rentang tanggal ya, format"],
+          "context_set": "youtube"
+        },
+        {"tag": "berpisah",
+         "patterns": ["Bye", "Sampai Ketemu nanti", "Sampai nanti", "dada","makasih","thanks"],
+         "responses": ["terimakaish telah berkunjung", "semoga harimu menyenangkan", "dah! dateng lagi ya"],
+          "context_set": ""
+        },
+        {"tag": "makasih",
+         "patterns": ["Makasih", "Terimakasih", "Sangat Membantu"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+          "context_set": ""
+        },
+        {"tag": "jam",
+         "patterns": ["Jam Berapa Bukanya ya ?", "buka jam berapa ya?", "kapan bukanya ?",  "kalo mau kesana gimana?","tokonya jam brp?","bisa dateng langsung?" ],
+         "responses": ["Kita buka pukul 9 Pagi s/d 9 Malam", "Jam kerja kita jam 9 pagi sampai malem"],
+          "context_set": ""
+        },
+        {"tag": "mobil",
+         "patterns": ["mobilnya apa aja ya?", "Adanya mobil tipe apa?", "Apa yang tersedia?","bisa sewa mobil ga?" ],
+         "responses": ["Tolong spesifik Kami hanya menyewakan jeep, inova dan avanza ", "Kami punya mobil jeep, inova dan avanza"],
+          "context_set": ""
+        },
+        {"tag": "pembayaran",
+         "patterns": ["Bisa bayar pake CC?", "Bisa bayar pake mastercard?", "cuma bisa bayar cash?","bisa bayar pakai tunai?","bayarnya gimana?","pembayaran?","bayar","visa bisa?","mastercard bisa?" ],
+         "responses": ["Kami menerima VISA, Mastercard dan AMEX", "Kami menerima hampir seluruh creditcards"],
+          "context_set": ""
+        },
+        {"tag": "buka hari ini",
+         "patterns": ["Hari ini buka ga?", "hari ini buka jam berapa ya?", "Buka hari ini jam?"],
+         "responses": ["Kita buka pukul 9 Pagi s/d 9 Malam", "Jam kerja kita jam 9 pagi sampai malem setiap hari"],
+          "context_set": ""
+        },
+        {"tag": "Sewa",
+         "patterns": ["boleh sewa mobil?", "saya ingin meminjam mobil", "gimana cara pinjem mobil?","mobil dong","jeep ada?","inova ada?","avanza ada?","sewa dong" ],
+         "responses": ["Kapan mau sewa mobilnya ?"],
+         "context_set": "harisewa"
+        },
+        {"tag": "today",
+         "patterns": ["hari ini"],
+         "responses": ["untuk penyewaan hari ini hubungi 0856933346049", "oh baik untuk menyewa hubungi 085693346049"],
+         "context_set": "harisewa"
+        }
+   ]
+}
