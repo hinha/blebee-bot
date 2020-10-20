@@ -49,7 +49,7 @@ class TrainBot(object):
 
     def training(self, debug=False):
         try:
-            with open(test.load_model, "rb") as f:
+            with open(self.load_model, "rb") as f:
                 self.words, self.classes, training, output = pickle.load(f)
         except FileNotFoundError as e:
             self._preprocessing(self.intents)
@@ -96,8 +96,7 @@ class TrainBot(object):
         model = tflearn.DNN(output_h_reg, tensorboard_dir='tflearn_logs')
 
         if debug:
-            os.remove(self.load_model)
-            model.fit(train_x, train_y, n_epoch=6100, batch_size=8, show_metric=True)
+            model.fit(train_x, train_y, n_epoch=5000, batch_size=10, show_metric=True)
             model.save('model/model.tflearn')
         else:
             model.load("model/model.tflearn")
@@ -131,12 +130,27 @@ class TrainBot(object):
         for r in results:
             return_list.append((self.classes[r[0]], r[1]))
 
+        # array is bad leaning
+        msgError = []
+        for n in return_list:
+            err = np.array(n[1])
+            if err < 0.50:
+                msgError.append(err)
+
+        # return length bad learning is greater than 2
+        if len(msgError) > 1:
+            msgError.sort(reverse=True)
+            return ['Noel masih belajar nih, bisa diperjelas lagi pertanyaan nya?', 'error', '',
+                    msgError[0].tolist()]
+
         context = {}
         for i in self.intents["intents"]:
             if i["tag"] == return_list[0][0]:
                 context[user_id] = i["context_set"]
 
                 output_var = [random.choice(i['responses']), i['tag'], context[user_id]]
+                acc = return_list[0][1].tolist()
+                output_var.append(acc)
                 return output_var
 
             # if 'context_filter' not in i or \
@@ -146,10 +160,10 @@ class TrainBot(object):
             #     return output_var
 
 
-
 if __name__ == '__main__':
+    # TEXT = "twitter-keyword 2020-01-30:@skoiahdqqdh"
     test = TrainBot()
-    model = test.training()
-    print(test.classify("youtube", model))
+    # model = test.training()
 
+    # os.remove(os.path.join(dir_path + "/training.pickle"))
     # test.training(debug=True)
