@@ -1,7 +1,7 @@
 {"intents": [
         {"tag": "salam",
-         "patterns": ["Hi","halo","pagi", "sewa dong", "ada orang disana?", "halo", "bos","bang", "test","mau tanya dong"],
-         "responses": ["halo, ada apa?", "ada yang bisa dibantu ?"],
+         "patterns": ["Hi", "hello", "halo","pagi", "ada orang disana?", "halo", "bos","bang", "test","mau tanya dong"],
+         "responses": ["Halo, saya noel ada apa?", "Halo ada yang bisa dibantu?"],
          "context_set": ""
         },
         {"tag": "age",
@@ -16,14 +16,49 @@
         },
         {
           "tag": "data",
-          "patterns": ["ambil data", "data hari ini"],
-          "responses": ["mau ambil data apa ?", "data apa ?", "bisa kami ketahui data apa yang mau diambil ?"],
+          "patterns": ["ambil data", "data hari ini", "saya mau ambil data", "data", "data media sosial", "ambil data dong"],
+          "responses": ["Noel beri tahu data apa yang akan ambil: \n\n- Twitter \n- Instagram \n- Youtube", "Bisa beri tahu Noel data apa yang mau diambil ? \n\n - Twitter \n- Instagram \n- Youtube"],
           "context_set": "data"
         },
         {
-          "tag": "twitter",
+          "tag": "twitter-now",
+          "patterns": ["data twitter hari ini", "twitter hari ini", "twitter sekarang"],
+          "responses": ["Baik, Noel akan mengambil data twitter hari ini"],
+          "context_set": "twitter"
+        },
+        {
+          "tag": "twitter-keyword",
           "patterns": ["ambil data twitter", "data twitter", "twitter"],
-          "responses": ["pilih rentang tanggal ya, format"],
+          "responses": ["Baik, Noel akan mengambil data twitter tapi sebelumnya beritahu noel. Pakai contoh format twitter-keyword <yyyy-mm-dd>:<keyword>"],
+          "context_set": "twitter"
+        },
+        {
+          "tag": "twitter-keyword-collect",
+          "patterns": [
+            "twitter-keyword",
+            "twitter-keyword 0123",
+            "twitter-keyword 1234",
+            "twitter-keyword 2345",
+            "twitter-keyword 3456",
+            "twitter-keyword 0123-01",
+            "twitter-keyword 1234-02",
+            "twitter-keyword 2345-03",
+            "twitter-keyword 2456-04",
+            "twitter-keyword 2456-05",
+            "twitter-keyword 2456-06",
+            "twitter-keyword 2456-07",
+            "twitter-keyword 2456-08",
+            "twitter-keyword 2456-09",
+            "twitter-keyword 0123-01-01",
+            "twitter-keyword 1234-02-02",
+            "twitter-keyword 2345-03-03",
+            "twitter-keyword 2456-04-04",
+            "twitter-keyword 2456-05-05",
+            "twitter-keyword 2456-06-06",
+            "twitter-keyword 2456-07-07",
+            "twitter-keyword 2456-08-08",
+            "twitter-keyword 2456-09-09"],
+          "responses": ["Noel akan mengambil data, tunggu sebentar ya nanti noel beritahu lagi"],
           "context_set": "twitter"
         },
         {
@@ -48,35 +83,15 @@
          "responses": ["Happy to help!", "Any time!", "My pleasure"],
           "context_set": ""
         },
-        {"tag": "jam",
-         "patterns": ["Jam Berapa Bukanya ya ?", "buka jam berapa ya?", "kapan bukanya ?",  "kalo mau kesana gimana?","tokonya jam brp?","bisa dateng langsung?" ],
-         "responses": ["Kita buka pukul 9 Pagi s/d 9 Malam", "Jam kerja kita jam 9 pagi sampai malem"],
-          "context_set": ""
+        {"tag": "help",
+         "patterns": ["help", "tolong", "tolong saya", "tolong dong", "minta tolong", "aku minta tolong", "help me", "please help me"],
+         "responses": ["Hai noel akan membantumu bisa diperjelas lagi?"],
+         "context_set": ""
         },
-        {"tag": "mobil",
-         "patterns": ["mobilnya apa aja ya?", "Adanya mobil tipe apa?", "Apa yang tersedia?","bisa sewa mobil ga?" ],
-         "responses": ["Tolong spesifik Kami hanya menyewakan jeep, inova dan avanza ", "Kami punya mobil jeep, inova dan avanza"],
-          "context_set": ""
-        },
-        {"tag": "pembayaran",
-         "patterns": ["Bisa bayar pake CC?", "Bisa bayar pake mastercard?", "cuma bisa bayar cash?","bisa bayar pakai tunai?","bayarnya gimana?","pembayaran?","bayar","visa bisa?","mastercard bisa?" ],
-         "responses": ["Kami menerima VISA, Mastercard dan AMEX", "Kami menerima hampir seluruh creditcards"],
-          "context_set": ""
-        },
-        {"tag": "buka hari ini",
-         "patterns": ["Hari ini buka ga?", "hari ini buka jam berapa ya?", "Buka hari ini jam?"],
-         "responses": ["Kita buka pukul 9 Pagi s/d 9 Malam", "Jam kerja kita jam 9 pagi sampai malem setiap hari"],
-          "context_set": ""
-        },
-        {"tag": "Sewa",
-         "patterns": ["boleh sewa mobil?", "saya ingin meminjam mobil", "gimana cara pinjem mobil?","mobil dong","jeep ada?","inova ada?","avanza ada?","sewa dong" ],
-         "responses": ["Kapan mau sewa mobilnya ?"],
-         "context_set": "harisewa"
-        },
-        {"tag": "today",
-         "patterns": ["hari ini"],
-         "responses": ["untuk penyewaan hari ini hubungi 0856933346049", "oh baik untuk menyewa hubungi 085693346049"],
-         "context_set": "harisewa"
+        {"tag": "author",
+         "patterns": ["bot", "author", "penulis", "pembuat", "developer", "development"],
+         "responses": ["Contact Developer:\n\nGithub:\t@hinha\nTwitter:\t@kipusekita"],
+         "context_set": ""
         }
-   ]
+]
 }
